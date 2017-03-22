@@ -26,7 +26,7 @@ abstract class Dao {
 	 * 对应的大学Id
 	 * @var integer
 	 */
-	private $collegeId = 0;
+	private $collegeDormAreaId = 0;
 	
 	/**
 	 * 单例
@@ -77,11 +77,11 @@ abstract class Dao {
 	 * 获取当前所在的大学Id
 	 * @return integer
 	 */
-	protected function getCollegeId() {
-		if (empty($this->collegeId)) {
-			$this->collegeId = SystemUtil::getCollegeId();
+	protected function getCollegeDormAreaId() {
+		if (empty($this->collegeDormAreaId)) {
+			$this->collegeDormAreaId = SystemUtil::getCollegeDormAreaId();
 		}
-		return $this->collegeId;
+		return $this->collegeDormAreaId;
 	}
 	
 	/**
@@ -401,5 +401,13 @@ abstract class Dao {
 			->offset($pagination->getOffset())
 			->limit($pagination->getLimit())
 			->all(self::db());
+	}
+	
+	/**
+	 * 获取当前大学Id
+	 * @return number
+	 */
+	public function getCollegeId() {
+		return 1;
 	}
 }

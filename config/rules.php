@@ -10,6 +10,8 @@ $productCatRules = [
 $productRules = [
 	//商品预览
 	'GET product/<id:\d+>/preview' => 'product/preview',
+	//商品详情页面
+	'GET product/<id:\d+>' => '/product/detail'
 ];
 
 

@@ -12,13 +12,12 @@ $(function(){
 </script>
 <div class="con">
 	<div class="banner" id="banner">
+		<!-- 轮播图片 -->
 		<div id="myCarousel" class="carousel slide">
-			<!-- 轮播（Carousel）指标 -->
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
-			</ol>   
-			<!-- 轮播（Carousel）项目 -->
+			</ol>
 			<div class="carousel-inner">
 				<?php $index = 0;?>
 				<?php foreach ($collegeCarousels as $carousel):?>
@@ -30,8 +29,6 @@ $(function(){
 					<?php $index++?>
 				<?php endforeach;?>
 			</div>
-			<!-- 轮播（Carousel）导航 -->
-			<!-- 轮播（Carousel）导航 -->
 			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
@@ -125,66 +122,19 @@ $(function(){
 		</div>
 		<div class="product-list-medium">
 			<ul>
-				<li><a href="http://www.ibeifeng.com">
-						<div class="product-img">
-							<img
-								src="http://www.360yhg.com/images/201702/thumb_img/0_thumb_G_1488136392725.jpg" />
-						</div>
-						<div class="product-info">
-							<div class="product-name">美的塔扇遥控电风扇家用静音宿舍落地扇台式无叶电扇</div>
-							<div class="product-price color-red">¥89.00</div>
-						</div>
-				</a></li>
-				<li><a href="http://www.ibeifeng.com">
-						<div class="product-img">
-							<img
-								src="http://www.360yhg.com/images/201702/thumb_img/0_thumb_G_1488136392725.jpg" />
-						</div>
-						<div class="product-info">
-							<div class="product-name">美的塔扇遥控电风扇家用静音宿舍落地扇台式无叶电扇</div>
-							<div class="product-price color-red">¥89.00</div>
-						</div>
-				</a></li>
-				<li><a href="http://www.ibeifeng.com">
-						<div class="product-img">
-							<img
-								src="http://www.360yhg.com/images/201702/thumb_img/0_thumb_G_1488136392725.jpg" />
-						</div>
-						<div class="product-info">
-							<div class="product-name">美的塔扇遥控电风扇家用静音宿舍落地扇台式无叶电扇</div>
-							<div class="product-price color-red">¥89.00</div>
-						</div>
-				</a></li>
-				<li><a href="http://www.ibeifeng.com">
-						<div class="product-img">
-							<img
-								src="http://www.360yhg.com/images/201702/thumb_img/0_thumb_G_1488136392725.jpg" />
-						</div>
-						<div class="product-info">
-							<div class="product-name">美的塔扇遥控电风扇家用静音宿舍落地扇台式无叶电扇</div>
-							<div class="product-price color-red">¥89.00</div>
-						</div>
-				</a></li>
-				<li><a href="http://www.ibeifeng.com">
-						<div class="product-img">
-							<img
-								src="http://www.360yhg.com/images/201702/thumb_img/0_thumb_G_1488136392725.jpg" />
-						</div>
-						<div class="product-info">
-							<div class="product-name">美的塔扇遥控电风扇家用静音宿舍落地扇台式无叶电扇</div>
-							<div class="product-price color-red">¥89.00</div>
-						</div>
-				</a></li>
-				<li><a href="http://www.ibeifeng.com">
-						<div class="product-img">
-							<img
-								src="http://www.360yhg.com/images/201702/thumb_img/0_thumb_G_1488136392725.jpg" />
-						</div>
-						<div class="product-info">
-							<div class="product-name">美的塔扇遥控电风扇家用静音宿舍落地扇台式无叶电扇</div>
-							<div class="product-price color-red">¥89.00</div>
-						</div>
-				</a></li>
+				<?php foreach ($jinpinProducts as $jinpinProduct):?>
+					<li>
+						<a href="/product/<?php echo $jinpinProduct['id']?>.html">
+							<div class="product-img">
+								<img src="<?php echo OssUtil::getOssImg($jinpinProduct['title_img'])?>" />
+							</div>
+							<div class="product-info">
+								<div class="product-name"><?php echo $jinpinProduct['name']?></div>
+								<div class="product-price color-red">¥<?php echo $jinpinProduct['price']?></div>
+							</div>
+						</a>
+					</li>
+				<?php endforeach;?>
 			</ul>
 		</div>
 	</div>

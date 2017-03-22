@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+header.detail-header {
+	width: 100%;
+	background: #EC5151;
+	padding: 1rem 0;
+	float: left;
+	position: fixed;
+}
+
+header.detail-header div.detail-header-nav {
+	width: 100%;
+}
+header.detail-header div.detail-header-nav div {
+	width: 100%;
+}
+header.detail-header div.detail-header-nav span {
+	margin-left: 3rem;
+}
+header.detail-header div.detail-header-nav span a {
+	color: #FBDCDC;
+	font-size: 1.7rem;
+}
+header.detail-header div.detail-header-nav span a.active {
+	color: white;
+}
+
+body {
+	height: 1000px;
+}

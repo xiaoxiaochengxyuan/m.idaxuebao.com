@@ -14,8 +14,8 @@ abstract class Controller extends \yii\web\Controller {
 	 */
 	public function beforeAction($action) {
 		//这个代码之后要被删除的
-		if (!\Yii::$app->request->getCookies()->has('college_id')) {
-			SystemUtil::setCollegeId(1);
+		if (!\Yii::$app->request->getCookies()->has('college_dorm_area_id')) {
+			SystemUtil::setCollegeDormAreaId(1);
 		}
 		return parent::beforeAction($action);
 	}
